@@ -19,8 +19,6 @@ def print_word_freq(file):
             line = line.replace("'", "")
             line = line.replace("'", "")
             line = line.lower()
-            for  word in STOP_WORDS:
-                line = line.replace(word,"")
             print(line)
 
 if __name__ == "__main__":

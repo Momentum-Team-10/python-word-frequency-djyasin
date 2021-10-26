@@ -6,8 +6,8 @@ In this project, you will use `open` to read in a text file and calculate the fr
 
 To calculate the frequency of words, you must:
 
-- remove punctuation
-- normalize all words to lowercase
+- remove punctuation DONE
+- normalize all words to lowercase DONE
 - remove "stop words" -- words used so frequently they are ignored
 - go through the file word by word and keep a count of how often each word is used
 
