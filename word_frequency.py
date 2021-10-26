@@ -3,12 +3,25 @@ STOP_WORDS = [
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
-
+import string
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
-    pass
-
+    with open(file) as text:
+        lines = text.readlines()
+        print(f"{len(lines)} lines in the file.")
+        for line in lines: 
+            line = line.replace(",", "")
+            line = line.replace(".", "")
+            line = line.replace("-", "")
+            line = line.replace("?", "")
+            line = line.replace(":", "")
+            line = line.replace("'", "")
+            line = line.replace("'", "")
+            line = line.lower()
+            for  word in STOP_WORDS:
+                line = line.replace(word,"")
+            print(line)
 
 if __name__ == "__main__":
     import argparse
@@ -19,9 +32,10 @@ if __name__ == "__main__":
     parser.add_argument('file', help='file to read')
     args = parser.parse_args()
 
-    file = Path(args.file)
-    if file.is_file():
+""""this calls the file to run"""
+file = Path(args.file)
+if file.is_file():
         print_word_freq(file)
-    else:
+else:
         print(f"{file} does not exist!")
         exit(1)
