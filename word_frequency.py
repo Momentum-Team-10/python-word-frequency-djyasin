@@ -22,7 +22,7 @@ def print_word_freq(file):
             print(line)
 """can't figure out how to remove the STOP_WORDS so want to write a for loop to omit them from the word count"""
 
-def word_count(words):
+def word_count(word):
     """pass over STOP_WORDS"""
     if word in STOP_WORDS:
         pass
